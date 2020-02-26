@@ -1,0 +1,35 @@
+{
+  "name": "fc-logger",
+  "version": "1.0.1",
+  "description": "Logger library built by Flavorcloud",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "test": "npm test"
+  },
+  "author": "flavorcloud",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lalithenqos/fc-logger.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lalithenqos/fc-logger/issues"
+  },
+  "homepage": "https://github.com/lalithenqos/fc-logger#readme",
+  "dependencies": {
+    "@types/bunyan": "^1.8.6",
+    "@types/i18n": "^0.8.6",
+    "app-root-path": "^3.0.0",
+    "bunyan": "^1.8.12",
+    "bunyan-rotating-file-stream": "^1.6.3",
+    "i18n": "^0.8.4",
+    "lodash": "^4.17.15",
+    "s3-streamlogger": "^1.5.0",
+    "s3-streamlogger-daily": "^0.6.0",
+    "verror": "^1.10.0"
+  },
+  "devDependencies": {
+    "@types/node": "^12.12.7"
+  }
+}
