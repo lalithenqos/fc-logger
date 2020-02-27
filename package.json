@@ -1,6 +1,6 @@
 {
   "name": "fc-logger",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Logger library built by Flavorcloud",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",

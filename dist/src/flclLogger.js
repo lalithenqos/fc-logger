@@ -105,7 +105,7 @@ class FlclLogger {
             Object.getOwnPropertyNames(data).forEach((key) => {
                 let propVal = data[key];
                 if (this.displayInRootLevel(key)) {
-                    if (typeof propVal == 'object' && this.canStringify(key))
+                    if (typeof propVal != 'string' && this.canStringify(key))
                         cleanedObj[key] = this._getStringified(propVal);
                     else
                         cleanedObj[key] = propVal;
