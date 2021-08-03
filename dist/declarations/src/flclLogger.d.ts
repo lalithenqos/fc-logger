@@ -1,12 +1,15 @@
 import { ValidObject } from './types';
 import { FlclMsgController } from './flclMsgHandler';
 export declare class FlclLogger {
+    httpContext: ValidObject;
+    private appInstance;
+    private appConfig;
     logger: ValidObject;
     requestId?: string;
     rootRequestId?: string;
     forwardedRequestId?: string;
     flclMsgController?: FlclMsgController;
-    constructor(options: ValidObject);
+    constructor(options: ValidObject, httpContext: ValidObject, appInstance: any, appConfig: ValidObject);
     bindCustomLevelLogs(): void;
     private getCustomLevel;
     setRequestId(requestId: string): void;
