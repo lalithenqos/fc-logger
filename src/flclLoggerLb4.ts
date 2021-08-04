@@ -5,6 +5,7 @@ import { ValidObject } from './types';
 import { FlclMsgController } from './flclMsgHandler';
 import { bind, inject, CoreBindings } from '@loopback/core';
 import { RestBindings } from '@loopback/rest';
+import _ from 'lodash';
 
 let CUSTOM_LEVELS = {
   SECURITY_ERROR: 61,
@@ -125,6 +126,7 @@ export class FlclLoggerLb4 {
         }
       });
       cleanedObj.FlclMsg = this._getStringified(cleanedObj.FlclMsg);
+      cleanedObj = this.trimLargeText(cleanedObj, data.trim, data.charLimit);
     } catch (e) {
       cleanedObj['logdata-parse-error'] = true;
       cleanedObj['logdata-parse-error-msg'] = e.message;
@@ -171,6 +173,20 @@ export class FlclLoggerLb4 {
 
     return data;
   }
+
+  trimLargeText(cleanedObj: ValidObject, trim: boolean, charLimit: number) {
+    if(trim == undefined)
+        trim = true;
+    let keys = ['FlclMsg', 'propertyValue'];
+    if(trim) {
+        charLimit = charLimit || 15000;
+        _.each(keys, (key: string, index: number) => {
+            if(cleanedObj[key] && typeof cleanedObj[key] == 'string' && cleanedObj[key].length > charLimit)
+                cleanedObj[key] = cleanedObj[key].substring(0, charLimit) + ' (-----TRUNCATED----- )';
+        });
+    }
+    return cleanedObj;
+}
 
   private displayInRootLevel(key: string) {
     let rootLevels = [

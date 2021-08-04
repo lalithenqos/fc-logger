@@ -1,0 +1,1 @@
+{"version":3,"file":"flclCriticalError.js","sourceRoot":"","sources":["../../src/flclCriticalError.ts"],"names":[],"mappings":";;AAAA,2CAAwC;AAExC,MAAqB,iBAAkB,SAAQ,qBAAS;IAEpD,YAAY,IAAqB;QAC7B,IAAG,OAAO,IAAI,IAAI,QAAQ;YACtB,IAAI,GAAG,EAAC,OAAO,EAAE,IAAI,EAAC,CAAC;QAE3B,KAAK,CAAC,IAAI,CAAC,CAAC;QACZ,IAAI,CAAC,SAAS,GAAG,UAAU,CAAC;IAChC,CAAC;CACJ;AATD,oCASC"}
