@@ -1,6 +1,6 @@
 {
   "name": "fc-logger",
-  "version": "2.0.3",
+  "version": "3.0.1",
   "description": "Logger library built by Flavorcloud",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -29,6 +29,7 @@
     "app-root-path": "^3.0.0",
     "bunyan": "^1.8.12",
     "bunyan-rotating-file-stream": "^1.6.3",
+    "express-http-context": "^1.2.4",
     "i18n": "^0.8.4",
     "lodash": "^4.17.21",
     "s3-streamlogger": "^1.5.0",
