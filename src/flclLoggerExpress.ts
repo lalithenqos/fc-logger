@@ -60,15 +60,24 @@ export class FlclLoggerExpress {
   }
 
   private getRequestId() {
-    return httpContext.get('requestId');
+    let requestId = httpContext.get('requestId');
+    if(!requestId)
+      requestId = this.requestId;
+    return requestId;
   }
 
   private getrootRequestId() {
-    return httpContext.get('rootRequestId');
+    let rootRequestId = httpContext.get('rootRequestId');
+    if(!rootRequestId)
+      rootRequestId = this.rootRequestId;
+    return rootRequestId;
   }
 
   private getForwardedRequestId() {
-    return httpContext.get('forwardedRequestId');
+    let forwardedRequestId = httpContext.get('forwardedRequestId');
+    if(!forwardedRequestId)
+      forwardedRequestId = this.forwardedRequestId;
+    return forwardedRequestId;
   }
 
   private structurizeArg(data: ValidObject) {
@@ -122,7 +131,7 @@ export class FlclLoggerExpress {
         }
       });
       cleanedObj.FlclMsg = this._getStringified(cleanedObj.FlclMsg);
-    } catch (e) {
+    } catch (e: any) {
       cleanedObj['logdata-parse-error'] = true;
       cleanedObj['logdata-parse-error-msg'] = e.message;
       cleanedObj['logdata-parse-error-stack'] = e.stack;

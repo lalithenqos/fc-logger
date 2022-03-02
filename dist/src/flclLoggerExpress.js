@@ -5,7 +5,7 @@ const tslib_1 = require("tslib");
 const bunyanClient_1 = require("./bunyanClient");
 let globals = require('../globals');
 const DEFAULT_LOG_ROOT_PATH = require('app-root-path') + '/logs/';
-const express_http_context_1 = tslib_1.__importDefault(require("express-http-context"));
+const express_http_context_1 = (0, tslib_1.__importDefault)(require("express-http-context"));
 let CUSTOM_LEVELS = {
     SECURITY_ERROR: 61,
     SECURITY_INFO: 31,
@@ -53,13 +53,22 @@ class FlclLoggerExpress {
         this.requestId = requestId;
     }
     getRequestId() {
-        return express_http_context_1.default.get('requestId');
+        let requestId = express_http_context_1.default.get('requestId');
+        if (!requestId)
+            requestId = this.requestId;
+        return requestId;
     }
     getrootRequestId() {
-        return express_http_context_1.default.get('rootRequestId');
+        let rootRequestId = express_http_context_1.default.get('rootRequestId');
+        if (!rootRequestId)
+            rootRequestId = this.rootRequestId;
+        return rootRequestId;
     }
     getForwardedRequestId() {
-        return express_http_context_1.default.get('forwardedRequestId');
+        let forwardedRequestId = express_http_context_1.default.get('forwardedRequestId');
+        if (!forwardedRequestId)
+            forwardedRequestId = this.forwardedRequestId;
+        return forwardedRequestId;
     }
     structurizeArg(data) {
         try {

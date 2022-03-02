@@ -126,7 +126,7 @@ export class FlclLogger {
         }
       });
       cleanedObj.FlclMsg = this._getStringified(cleanedObj.FlclMsg);
-    } catch (e) {
+    } catch (e: any) {
       cleanedObj['logdata-parse-error'] = true;
       cleanedObj['logdata-parse-error-msg'] = e.message;
       cleanedObj['logdata-parse-error-stack'] = e.stack;
