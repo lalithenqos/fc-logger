@@ -1,0 +1,11 @@
+[
+    "userAgent", "host",
+    "req", "res", "err",
+    "appId", "userId", "customerName", "companyName", "customerId", "storeName", "orderReference", "fromCity", "fromCountry", "toCity", "toCountry", "route", "FlclMsg",
+    "className", "class", "methodName", "propertyValue", "propertyName", "level",
+    "requestId", "rootRequestId", "forwardedRequestId", "earlierRequestId", "isNewRequest", "isEndOfResponse", "inTime", "inTimeDate", "elapsedTime",
+    "workerName", "action",
+    "errorType", "identifier", "carrierList", "carrierList2", "rateAPIFlag", "rateEntryLog",
+    "newOrder", "orderRateProvider", "orderGateway", "processedOrderStatus", "usedFlavorCloudRate", "carrier", "shippingLineDetail", "order",
+    "shipmentLogContext", "browserLog", "severity", "msgFromContext4", "xShopifyOrderId", "xShopifyDomain", "xShopifyTopic", "awsRequestId", "paymentInstrument"
+]

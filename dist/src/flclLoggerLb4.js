@@ -7,7 +7,7 @@ let globals = require('../globals');
 const DEFAULT_LOG_ROOT_PATH = require('app-root-path') + '/logs/';
 const core_1 = require("@loopback/core");
 const rest_1 = require("@loopback/rest");
-const lodash_1 = (0, tslib_1.__importDefault)(require("lodash"));
+const lodash_1 = tslib_1.__importDefault(require("lodash"));
 let CUSTOM_LEVELS = {
     SECURITY_ERROR: 61,
     SECURITY_INFO: 31,
@@ -247,11 +247,11 @@ let FlclLoggerLb4 = class FlclLoggerLb4 {
         this.logger.fatal(this.structurizeArg(args));
     }
 };
-FlclLoggerLb4 = (0, tslib_1.__decorate)([
-    (0, tslib_1.__param)(0, (0, core_1.inject)(rest_1.RestBindings.Http.CONTEXT)),
-    (0, tslib_1.__param)(1, (0, core_1.inject)(core_1.CoreBindings.APPLICATION_CONFIG)),
-    (0, tslib_1.__param)(2, (0, core_1.inject)('flcl.logger.options')),
-    (0, tslib_1.__metadata)("design:paramtypes", [Object, Object, Object])
+FlclLoggerLb4 = tslib_1.__decorate([
+    tslib_1.__param(0, core_1.inject(rest_1.RestBindings.Http.CONTEXT)),
+    tslib_1.__param(1, core_1.inject(core_1.CoreBindings.APPLICATION_CONFIG)),
+    tslib_1.__param(2, core_1.inject('flcl.logger.options')),
+    tslib_1.__metadata("design:paramtypes", [Object, Object, Object])
 ], FlclLoggerLb4);
 exports.FlclLoggerLb4 = FlclLoggerLb4;
 //# sourceMappingURL=flclLoggerLb4.js.map

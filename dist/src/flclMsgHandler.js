@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.FlclMsgController = exports.FlclMessage = void 0;
 const tslib_1 = require("tslib");
 let _ = require('lodash');
-const i18nClient_1 = (0, tslib_1.__importDefault)(require("./i18nClient"));
+const i18nClient_1 = tslib_1.__importDefault(require("./i18nClient"));
 let globals = require('../globals');
 /**
  * @class FlclMessage

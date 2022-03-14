@@ -11,6 +11,8 @@ const errorTypes = [
 
 const DEFAULT_ERROR_TYPE = 'FlclError';
 const _ = require('lodash');
+import rootLevels from './rootLevelNodes.json';
+import { forEach } from "lodash";
 
 export class FlclError extends VError.WError { //} implements Component {
   className: string;
@@ -45,6 +47,12 @@ export class FlclError extends VError.WError { //} implements Component {
     this.message = this.getMsgBasedOnArgs(args);
     if (args['identifier'])
       this.identifier = args['identifier'];
+    if (args['identifier'])
+      this.identifier = args['identifier'];
+
+    Object.keys(args).forEach((key: string, val: any) => {
+      if(rootLevels.indexOf(key) && !this[key]) this[key] = args[key];
+    });
   }
 
   static create(args: { [x: string]: any }) { //, context?: object

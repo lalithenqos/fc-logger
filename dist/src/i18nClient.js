@@ -7,7 +7,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const tslib_1 = require("tslib");
 //var i18n2 = require("@types/i18n");
-const i18n_1 = (0, tslib_1.__importDefault)(require("i18n"));
+const i18n_1 = tslib_1.__importDefault(require("i18n"));
 class I18nClient {
     constructor(localesFilePath) {
         this.localesFilePath = localesFilePath;

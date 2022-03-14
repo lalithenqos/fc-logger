@@ -3,6 +3,7 @@ let globals = require('../globals');
 const DEFAULT_LOG_ROOT_PATH = require('app-root-path') + '/logs/';
 import { ValidObject } from './types';
 import { FlclMsgController } from './flclMsgHandler';
+import rootLevels from './rootLevelNodes.json';
 
 let CUSTOM_LEVELS = {
   SECURITY_ERROR: 61,
@@ -174,17 +175,6 @@ export class FlclLogger {
   }
 
   private displayInRootLevel(key: string) {
-    let rootLevels = [
-      'userAgent', 'host',
-      'req', 'res', 'err',
-      'appId', 'userId', 'customerName', 'companyName', 'customerId', 'companyName', 'orderReference', 'fromCity', 'fromCountry', 'toCity', 'toCountry', 'route', 'FlclMsg',
-      'className', 'class', 'methodName', 'propertyValue', 'propertyName', 'level',
-      'requestId', 'rootRequestId', 'forwardedRequestId', 'earlierRequestId', 'isNewRequest', 'isEndOfResponse', 'inTime', 'inTimeDate', 'elapsedTime',
-      'workerName', 'action',
-      'errorType', 'identifier', 'carrierList', 'carrierList2', 'rateAPIFlag', 'rateEntryLog',
-      'newOrder', 'orderRateProvider', 'orderGateway', 'processedOrderStatus', 'usedFlavorCloudRate', 'carrier', 'shippingLineDetail', 'order',
-      'shipmentLogContext', 'browserLog', 'severity', 'msgFromContext4', 'xShopifyOrderId', 'xShopifyDomain', 'xShopifyTopic', 'awsRequestId'
-    ];
     if (rootLevels.indexOf(key) != -1)
       return true;
     else

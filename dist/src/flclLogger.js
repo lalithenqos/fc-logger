@@ -1,9 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.FlclLogger = void 0;
+const tslib_1 = require("tslib");
 const bunyanClient_1 = require("./bunyanClient");
 let globals = require('../globals');
 const DEFAULT_LOG_ROOT_PATH = require('app-root-path') + '/logs/';
+const rootLevelNodes_json_1 = tslib_1.__importDefault(require("./rootLevelNodes.json"));
 let CUSTOM_LEVELS = {
     SECURITY_ERROR: 61,
     SECURITY_INFO: 31,
@@ -167,18 +169,7 @@ class FlclLogger {
         return data;
     }
     displayInRootLevel(key) {
-        let rootLevels = [
-            'userAgent', 'host',
-            'req', 'res', 'err',
-            'appId', 'userId', 'customerName', 'companyName', 'customerId', 'companyName', 'orderReference', 'fromCity', 'fromCountry', 'toCity', 'toCountry', 'route', 'FlclMsg',
-            'className', 'class', 'methodName', 'propertyValue', 'propertyName', 'level',
-            'requestId', 'rootRequestId', 'forwardedRequestId', 'earlierRequestId', 'isNewRequest', 'isEndOfResponse', 'inTime', 'inTimeDate', 'elapsedTime',
-            'workerName', 'action',
-            'errorType', 'identifier', 'carrierList', 'carrierList2', 'rateAPIFlag', 'rateEntryLog',
-            'newOrder', 'orderRateProvider', 'orderGateway', 'processedOrderStatus', 'usedFlavorCloudRate', 'carrier', 'shippingLineDetail', 'order',
-            'shipmentLogContext', 'browserLog', 'severity', 'msgFromContext4', 'xShopifyOrderId', 'xShopifyDomain', 'xShopifyTopic', 'awsRequestId'
-        ];
-        if (rootLevels.indexOf(key) != -1)
+        if (rootLevelNodes_json_1.default.indexOf(key) != -1)
             return true;
         else
             return false;

@@ -5,7 +5,7 @@ const tslib_1 = require("tslib");
 const bunyanClient_1 = require("./bunyanClient");
 let globals = require('../globals');
 const DEFAULT_LOG_ROOT_PATH = require('app-root-path') + '/logs/';
-const express_http_context_1 = (0, tslib_1.__importDefault)(require("express-http-context"));
+const express_http_context_1 = tslib_1.__importDefault(require("express-http-context"));
 let CUSTOM_LEVELS = {
     SECURITY_ERROR: 61,
     SECURITY_INFO: 31,

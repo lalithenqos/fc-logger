@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.FlclError = void 0;
+const tslib_1 = require("tslib");
 let VError = require('verror');
 /**
  * Custom error message class. The idea is to add more functionality when needed
@@ -12,6 +13,7 @@ const errorTypes = [
 ];
 const DEFAULT_ERROR_TYPE = 'FlclError';
 const _ = require('lodash');
+const rootLevelNodes_json_1 = tslib_1.__importDefault(require("./rootLevelNodes.json"));
 class FlclError extends VError.WError {
     /**
      * @param [] args can contain the following
@@ -39,6 +41,12 @@ class FlclError extends VError.WError {
         this.message = this.getMsgBasedOnArgs(args);
         if (args['identifier'])
             this.identifier = args['identifier'];
+        if (args['identifier'])
+            this.identifier = args['identifier'];
+        Object.keys(args).forEach((key, val) => {
+            if (rootLevelNodes_json_1.default.indexOf(key) && !this[key])
+                this[key] = args[key];
+        });
     }
     static create(args) {
         if (typeof args == 'string')

@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.BunyanClient = void 0;
 const tslib_1 = require("tslib");
-const Bunyan = (0, tslib_1.__importStar)(require("bunyan"));
+const Bunyan = tslib_1.__importStar(require("bunyan"));
 let RotatingFileStream = require('bunyan-rotating-file-stream');
 let appRoot = require('app-root-path') + '/';
 let LogSerializer = require('./logSerializer');
