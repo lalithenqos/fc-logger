@@ -7,5 +7,6 @@
     "workerName", "action",
     "errorType", "identifier", "carrierList", "carrierList2", "rateAPIFlag", "rateEntryLog",
     "newOrder", "orderRateProvider", "orderGateway", "processedOrderStatus", "usedFlavorCloudRate", "carrier", "shippingLineDetail", "order",
-    "shipmentLogContext", "browserLog", "severity", "msgFromContext4", "xShopifyOrderId", "xShopifyDomain", "xShopifyTopic", "awsRequestId", "paymentInstrument"
+    "shipmentLogContext", "browserLog", "severity", "msgFromContext4", "xShopifyOrderId", "xShopifyDomain", "xShopifyTopic", "awsRequestId", "paymentInstrument",
+    "billing"
 ]

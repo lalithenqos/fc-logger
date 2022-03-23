@@ -41,8 +41,7 @@ class FlclError extends VError.WError {
         this.message = this.getMsgBasedOnArgs(args);
         if (args['identifier'])
             this.identifier = args['identifier'];
-        if (args['identifier'])
-            this.identifier = args['identifier'];
+        // preserve the rootLevel nodes in Error log as well
         Object.keys(args).forEach((key, val) => {
             if (rootLevelNodes_json_1.default.indexOf(key) && !this[key])
                 this[key] = args[key];

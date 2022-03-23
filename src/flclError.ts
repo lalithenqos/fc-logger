@@ -47,9 +47,8 @@ export class FlclError extends VError.WError { //} implements Component {
     this.message = this.getMsgBasedOnArgs(args);
     if (args['identifier'])
       this.identifier = args['identifier'];
-    if (args['identifier'])
-      this.identifier = args['identifier'];
-
+      
+    // preserve the rootLevel nodes in Error log as well
     Object.keys(args).forEach((key: string, val: any) => {
       if(rootLevels.indexOf(key) && !this[key]) this[key] = args[key];
     });
